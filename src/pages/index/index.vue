@@ -18,7 +18,10 @@
       <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
       <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
     </form>
+    <button @click="goPage2">go page2</button>
+
   </div>
+
 </template>
 
 <script>
@@ -55,7 +58,12 @@ export default {
     },
     clickHandle (msg, ev) {
       console.log('clickHandle:', msg, ev)
-    }
+    },
+    goPage2(){
+      wx.redirectTo({
+        url : "../page2/main"
+      })
+    },
   },
 
   created () {
